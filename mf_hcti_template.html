@@ -227,13 +227,13 @@ body {
     </div>
     <div>
       <span class="header-name">morrico.fino</span>
-      <span class="header-pilar" id="header-pilar"></span>
+      <span class="header-pilar">{{ pilar }}</span>
     </div>
   </div>
 
   <!-- Foto -->
   <div class="photo">
-    <img id="foto" src="" alt="">
+    <img src="{{ imagen_url }}" alt="">
   </div>
 
   <!-- Watermark -->
@@ -249,8 +249,8 @@ body {
   <!-- Texto -->
   <div class="text-zone">
     <div class="sep"><div class="sep-line"></div></div>
-    <div class="pilar" id="pilar"></div>
-    <div class="headline" id="headline"></div>
+    <div class="pilar">{{ pilar }}</div>
+    <div class="headline">{{ titulo_l1 }}<br><em>{{ titulo_l2 }}</em></div>
     <div class="bar">
       <span class="handle">@morrico.fino</span>
       <span class="firma">— MF</span>
@@ -260,19 +260,6 @@ body {
   <!-- Noise + borde -->
   <div class="noise"></div>
   <div class="border-box"></div>
-
-<script>
-  const p = new URLSearchParams(window.location.search);
-  const imagen = p.get('imagen') || '';
-  const pilar  = p.get('pilar')  || '';
-  const l1     = p.get('l1')     || '';
-  const l2     = p.get('l2')     || '';
-
-  document.getElementById('foto').src = imagen;
-  document.getElementById('header-pilar').textContent = pilar;
-  document.getElementById('pilar').textContent = pilar;
-  document.getElementById('headline').innerHTML = l1 + '<br><em>' + l2 + '</em>';
-</script>
 
 </body>
 </html>
